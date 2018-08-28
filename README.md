@@ -2,6 +2,20 @@
 
 ## A 2-in-1 script that leverages [Pyota Libraries](https://github.com/iotaledger/iota.lib.py) in order to spam the [IOTA network (Tangle)](http://tangle.glumb.de/) or manually promote a transaction.
 
+### DISCLAIMER:
+This project is for experimental purposes only, bugs may be present, and many python rules may not be followed. I'm still learning about IOTA and Python so don't expect too much.
+I do not take responsibility for any damages caused or funds lost (should not be the case, since sending meta-transactions does not require seed)
+
+Having said that, feel free to make changes to the code or suggest improvements to the script, I would like to learn as much as possible and in the best possible way.
+
+Remember that spamming when not explicitly required by the IOTA Foundation is only counterproductive as it significantly increases the storage space occupied by the Tangle, making snapshots more frequent and slowing down the rest of the development.
+
+The idea of the promoter was born after the various bugs related to "inconsistent subtangle", present in IRI 1.5.3.
+
+If you've learned something from this project or if I've been nice, you might consider a donation at ```IJ9KBA9YJWYFG9TUXFYQJVHQPFSYLHTHXNPMHHGXTRNPHOPEQLNNSUZYPBYLQSDOEYMAVHVO9ER9PZL9XVIJO9FVVZ```.
+
+![Address QRCODE.png](https://github.com/Mrcuve0/sems-spammer-promoter/blob/master/Address%20QRCODE.png)
+
 ### REQUIREMENTS:   
 * Pyota libraries
 * dotenv
@@ -42,9 +56,8 @@ The script starts by checking the node's health, and will continue even if it's 
 |   tips are selected and then used as
 |   "branchTransaction" and "trunkTransaction".
 |
-|   The PoW is performed (some nodes will not let you complete the 
-|   "attachToTangle" method, if it's the case, change node and
-|   reload the script).
+|   The PoW is performed (some nodes will not let you complete the "attachToTangle" method, 
+|   if it's the case, change node and reload the script).
 |   
 |   The finalized bundle is finally broadcasted to the Tangle.
 |
@@ -69,8 +82,8 @@ Using the script in promoter mode allows you to manually promote an old transact
 |   reload the script).
 |   
 |   The finalized bundle is finally broadcasted to the Tangle.
-|   The hash of the commited transaction is saved and will be used as the new Transaction Hash of the transaction
-|   to be approved. And so on.
+|   The hash of the commited transaction is saved and will be used as the new Transaction Hash of the 
+|   transaction to be approved. And so on.
 | - - Infinite loop < - -
 ```
 
@@ -99,4 +112,35 @@ Here's a little graph to better understand the procedure:
  /                                                    |               /                        |
                                                       |     . . .                              |
                   ---FIRST ITERATION---               |           ---SECOND ITERATION---       | ---THIRD 
-                                                                                                    ITERATION---
+                                                                                                  ITERATION---
+```                                                                                        
+
+### SOME COMMENTS:
+
+* ### Spammer:
+    Probably needs code refinement, but the algorithm is pretty straight-forward.
+    Can be improved by adding a PoW as-a-service implementation, in order to enhanced the TPS throughput.
+
+* ### Promoter:
+    Needs code refinement, the algorithm is working but there's probably a better implementation that guarantees better timings. Should be noted that this implementation avoids blowballs around milestones, but creates a chains of *meta-transactions*.
+    Sometimes, better timings are achieved by launching the script in 2 or more paralles sessions (also with different nodes). This could be better implemented by launching the infinite loop in multiple threads, probably new versions of the script will explore this solution.
+
+    And now, some examples of correctly promoted transactions:
+
+    https://thetangle.org/transaction/OHATVIEHDOIQGBLNUSYAXZZDGT9RTJSPOLOQDZSHVGSVBXLFFTZROBWHGSRUMBEXTZOSGKWGGHOCA9999
+    
+    ```promoted by... ```
+    
+    https://thetangle.org/transaction/QNZJPBALYGTBZRMKYLMQLVGMXRYCOSFCIXHTDVBULYDNHBX9MPVNEMKYICVNBLACTDOEFDRTDOSEA9999
+
+    ```or...```
+
+    https://thetangle.org/transaction/YJZANSPQCA9XIJUAWJSZUXBJBXVJEUDPWNLGH9SXIAJGAXLOQCJPFTBCWTHPHJCEFJFLUBBVOAVLZ9999
+
+    ```promoted by... ```
+
+    https://thetangle.org/transaction/LAVSJGOSOMUOFEWKD9DHQNLBPOJOF9EFMFRBW9BNGJVAKWKGBJQSD9WCNVJLEMKWEJBHCWUPELKBA9999
+
+    and many, many others. 
+    
+    In just 2 hours I confirmed transactions for about 4Gi, randomly picked between pending transactions found on https://tanglemonitor.com/.
