@@ -15,7 +15,7 @@ Remember that spamming when not explicitly required by the IOTA Foundation is on
 
 The idea of the promoter was born after the various bugs related to "inconsistent subtangle", present in IRI 1.5.3.
 
-If you've learned something from this project or if I've been nice, you might consider a donation at ```IJ9KBA9YJWYFG9TUXFYQJVHQPFSYLHTHXNPMHHGXTRNPHOPEQLNNSUZYPBYLQSDOEYMAVHVO9ER9PZL9XVIJO9FVVZ```.
+If you've learned something from this project or if I've been nice, you might consider a donation at ```OSYUR9NE9SV9LYGFWOAWAPXSQCXEITZXRKHSVSXIKYXUUSGIMIJZMSKCXZBVZRYUVMVS9KYNENVZVVULADJWOUUYBX```.
 
 ![Address QRCODE.png](https://github.com/Mrcuve0/sems-spammer-promoter/blob/master/Address%20QRCODE.png)
 
