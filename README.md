@@ -2,6 +2,9 @@
 
 ## A 2-in-1 script that leverages [Pyota Libraries](https://github.com/iotaledger/iota.lib.py) in order to spam the [IOTA network (Tangle)](http://tangle.glumb.de/) or manually promote a transaction.
 
+[![DevelopmentStatus](https://img.shields.io/badge/Development-Paused-yellow.svg)](https://img.shields.io/badge/Development-Paused-yellow.svg)
+[![HitCount](http://hits.dwyl.io/Mrcuve0/IOTA-sems-spammer-promoter.svg)](http://hits.dwyl.io/Mrcuve0/IOTA-sems-spammer-promoter)
+
 ### DISCLAIMER:
 This project is for experimental purposes only, bugs may be present, and many python rules may not be followed. I'm still learning about IOTA and Python so don't expect too much.
 I do not take responsibility for any damages caused or funds lost (should not be the case, since sending meta-transactions does not require seed)
