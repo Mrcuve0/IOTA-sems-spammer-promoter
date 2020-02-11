@@ -5,6 +5,8 @@
 [![DevelopmentStatus](https://img.shields.io/badge/Development-Paused-yellow.svg)](https://img.shields.io/badge/Development-Paused-yellow.svg)
 [![HitCount](http://hits.dwyl.io/Mrcuve0/IOTA-sems-spammer-promoter.svg)](http://hits.dwyl.io/Mrcuve0/IOTA-sems-spammer-promoter)
 
+![Twitter Follow](https://img.shields.io/twitter/follow/Mrcuve0?label=Follow%20Me%21%20%40Mrcuve0&style=social)
+
 ### DISCLAIMER:
 This project is for experimental purposes only, bugs may be present, and many python rules may not be followed. I'm still learning about IOTA and Python so don't expect too much.
 I do not take responsibility for any damages caused or funds lost (should not be the case, since sending meta-transactions does not require seed)
