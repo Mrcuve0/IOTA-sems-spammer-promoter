@@ -79,8 +79,8 @@ Using the script in promoter mode allows you to manually promote an old transact
 |   v
 |   
 |   A meta-transaction is created, then finalized in a bundle. After that 2 random 
-|   tips are selected but only one of them will be used as a transaction ("trunkTransaction").
-|   The "branchTransaction" will be overwrited with our Transaction Hash of the transaction to be approved.
+|   tips are selected but only one of them will be used as a transaction ("trunkTransaction")
+|   the "branchTransaction" will be overwrited with our Transaction Hash of the transaction to be approved.
 |
 |   The PoW is performed (some nodes will not let you complete the 
 |    "attachToTangle" method, if it's the case, change node and
@@ -124,11 +124,11 @@ Here's a little graph to better understand the procedure:
 
 * ### Spammer:
     Probably needs code refinement, but the algorithm is pretty straight-forward.
-    Can be improved by adding a PoW as-a-service implementation, in order to enhance the throughput (TPS aka *Transaction Per Second*).
+    Can be improved by adding a PoW as-a-service implementation, in order to enhanced the TPS throughput.
 
 * ### Promoter:
-    Needs code refinement, the algorithm is working but there's probably a better implementation that guarantees better timings. Should be noted that this implementation avoids blowballs on milestones, but creates a chain of *meta-transactions*.
-    Sometimes, better timings are achieved by launching the script in 2 or more parallel sessions (also with different nodes). This could be better implemented by launching the infinite loop in multiple threads, probably new versions of the script will explore this solution.
+    Needs code refinement, the algorithm is working but there's probably a better implementation that guarantees better timings. Should be noted that this implementation avoids blowballs around milestones, but creates a chains of *meta-transactions*.
+    Sometimes, better timings are achieved by launching the script in 2 or more paralles sessions (also with different nodes). This could be better implemented by launching the infinite loop in multiple threads, probably new versions of the script will explore this solution.
 
     And now, some examples of correctly promoted transactions:
 
